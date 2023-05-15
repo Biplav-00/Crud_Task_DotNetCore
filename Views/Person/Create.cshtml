@@ -1,0 +1,43 @@
+﻿@model todo_web_app2.Models.Person
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddPerson">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+          
+            <div class="form-group">
+                <input type="hidden" asp-for="person_Id" />
+                <label asp-for="person_Name" class="control-label"></label>
+                <input asp-for="person_Name" class="form-control" />
+                <span asp-validation-for="person_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               <label asp-for="device_Name" class="control-label"></label>
+               <select asp-for="dev_Id" class="form-control" asp-items="@(new SelectList(ViewBag.DevList,"device_Id","device_Name"))">
+            </select>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input"  style="background-color:greenyellow" asp-for="is_Active" /> @Html.DisplayNameFor(model => model.is_Active)
+                </label>
+            </div>    
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="PersonList" class="btn btn-outline-success">Back to </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
