@@ -18,7 +18,7 @@ namespace todo_web_app2.Controllers
             //var perList = _Db.tbl_Person.ToList();
             var perList = from a in _Db.tbl_Person
                           join b in _Db.tbl_Device
-                          on a.person_Id equals b.device_Id
+                          on a.dev_Id equals b.device_Id
                           into Dev
                           from b in Dev.DefaultIfEmpty()
 
@@ -28,7 +28,7 @@ namespace todo_web_app2.Controllers
                               person_Name = a.person_Name,
                               is_Active = a.is_Active,
                               dev_Id = a.dev_Id,
-                              device_Name=b==null?"Empty":b.device_Name
+                              device_Name = b == null ? "Empty" :b.device_Name
 
                           };
             try
@@ -37,7 +37,10 @@ namespace todo_web_app2.Controllers
             }
             catch(Exception ex)
             {
-                return View();
+                /*return View();*/
+                //Console.WriteLine(ex);
+
+                return null;
             }
 
 
@@ -93,12 +96,13 @@ namespace todo_web_app2.Controllers
             }
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete_Person(int id)
         {
             try
             {
                 var specific_Person =await _Db.tbl_Person.FindAsync(id);
-                if(specific_Person!=null)
+               // await Console.Out.WriteLineAsync(+id);
+                if (specific_Person!=null)
                 {
                     _Db.tbl_Person.Remove(specific_Person);
                     await _Db.SaveChangesAsync();

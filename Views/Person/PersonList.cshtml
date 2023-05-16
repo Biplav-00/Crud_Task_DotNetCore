@@ -4,9 +4,10 @@
     ViewData["Title"] = "Person List";
 }
 
+
 <h1>PersonList</h1>
 
-<p class="float-right">
+<p class="float-left">
     <a asp-action="Create" class="btn btn-primary">Add New</a>
 </p>
 <table class="table">
@@ -25,34 +26,35 @@
             <th>
                 @Html.DisplayNameFor(model => model.is_Active)
             </th>
-           
-           
+
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-                
-                <td>
-                    @Html.ActionLink("Edit", "Create", new { item.person_Id, item.person_Name,item.is_Active,item.device_Name,item.dev_Id },new{ @class = "btn btn-success"}) |
+        @foreach (var item in Model)
+        {
+            <tr>
 
-                    @Html.ActionLink("Delete", "Delete", new {id= item.person_Id  }, new {@class="btn btn-danger", onClick="return confirm('Do you really want to delete this record ?')"})
+                <td>
+                    @Html.ActionLink("Edit", "Create", new { item.person_Id, item.person_Name, item.is_Active, item.device_Name, item.dev_Id },new{ @class = "btn btn-success"})
+
+                    @Html.ActionLink("Delete", "Delete_Person", new { id=item.person_Id  }, new {@class="btn btn-danger", onClick="return confirm('Do you really want to delete this record ?')"})
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.person_Id)
                 </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.person_Name)
-            </td>
-               <td>
-                   @Html.DisplayFor(modelItem => item.device_Name)
-               </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.is_Active)
-            </td>
-            
-           
-        </tr>
-}
+                <td>
+                    @Html.DisplayFor(modelItem => item.person_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.device_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.is_Active)
+                </td>
+
+
+            </tr>
+        }
     </tbody>
 </table>
