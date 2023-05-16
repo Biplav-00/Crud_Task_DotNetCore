@@ -16,6 +16,8 @@ namespace todo_web_app2.Models
         public DbSet<Person> tbl_Person { get; set; }
         public DbSet<Devices> tbl_Device { get; set; }
 
+      
+
 
         //public string device_
     }

@@ -1,5 +1,6 @@
 ﻿using MessagePack;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace todo_web_app2.Models
 {
@@ -11,4 +12,6 @@ namespace todo_web_app2.Models
         
        public string device_Name { get; set; }
     }
+
+    
 }
