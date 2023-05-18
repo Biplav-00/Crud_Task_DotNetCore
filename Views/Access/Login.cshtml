@@ -1,0 +1,40 @@
+﻿@model todo_web_app2.Models.VMLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <div class="container">
+        <form asp-controller="Access" asp-action="Login" method="post">
+            <h1>Login</h1>
+            @* <label for="Email" asp-for="Email" >Email</label>*@
+            <input type="email" asp-for="Email" required placeholder="Please enter your email" />
+            @*<label for="PassWord" asp-for="PassWord">Password</label>*@
+            <input type="password" asp-for="PassWord" required placeholder="Please enter your password" />
+            <label>
+                <input type="checkbox" asp-for="KeepLoggedIn" />
+                Keep me logged In.
+            </label>
+            <button type="submit">
+                Login
+            </button>
+            @if (ViewData["ValidateMessage"] != null)
+            {
+                <br />
+                <br />
+                <label> @ViewData["ValidateMessage"]</label>
+            }
+
+
+        </form>
+
+    </div>
+</head>
+<body>
+</body>
+</html>

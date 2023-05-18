@@ -268,4 +268,3 @@ F:\asp dot net\todo_web_app2\todo_web_app2\obj\Debug\net6.0\refint\todo_web_app2
 F:\asp dot net\todo_web_app2\todo_web_app2\obj\Debug\net6.0\todo_web_app2.pdb
 F:\asp dot net\todo_web_app2\todo_web_app2\obj\Debug\net6.0\todo_web_app2.genruntimeconfig.cache
 F:\asp dot net\todo_web_app2\todo_web_app2\obj\Debug\net6.0\ref\todo_web_app2.dll
-F:\asp dot net\todo_web_app2\todo_web_app2\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout_Login.cshtml.rz.scp.css

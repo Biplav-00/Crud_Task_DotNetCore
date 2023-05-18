@@ -2,8 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using todo_web_app2.Models;
 
+
 namespace todo_web_app2.Controllers
 {
+    
     public class PersonController : Controller
     {
         private readonly PersonContext _Db;
@@ -45,6 +47,7 @@ namespace todo_web_app2.Controllers
 
 
         }
+    
         
         public IActionResult Create(Person obj)
         {
